@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+.logo {
+  width: 8rem;
+}
+
+nav {
+  background-color: #ff645c;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+a {
+  color: white;
+  font-size: 14px;
+  padding: 40px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
