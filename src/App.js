@@ -30,8 +30,6 @@ function App() {
     let crds = geo.coords;
     setLongitude(crds.longitude);
     setLatitude(crds.latitude);
-    console.log(latitude, longitude);
-    console.log(searchComplete);
   }
 
   function Error(err) {
@@ -42,7 +40,7 @@ function App() {
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(Coords, Error);
-  });
+  }, []);
 
   //
   //

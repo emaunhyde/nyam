@@ -2,21 +2,27 @@ import React, { useState, useEffect, useContext } from "react";
 import SearchContext from "./SearchContext";
 
 const Gallery = () => {
-  const { searchResults } = useContext(SearchContext);
+  const { searchResults, searchComplete, setSearchComplete } = useContext(
+    SearchContext
+  );
   const [restaurants, setRestaurants] = useState([]);
 
-  //   useEffect(() => {
-
-  //   setRestaurants(searchResults);
-  //   console.log(restaurants);
-  //   }, [searchResults]);
+  useEffect(() => {
+    if (searchComplete === true) {
+      setRestaurants(searchResults);
+      setSearchComplete(false);
+      console.log(restaurants);
+      console.log(searchComplete);
+    }
+  }, [searchResults]);
 
   return (
     <div>
       <h3>
-        {/* {restaurants.restaurants.map((e) => {
-          return <p>{e.restaurant.name}</p>;
-        })} */}
+        {/* {searchComplete
+          ? restaurants.restaurants.map((e) => {
+              return <li key={e.restaurant.R.res_id}>{e.restaurant.name}</li>; */}
+        {/* }) : ""} */}
       </h3>
     </div>
   );
