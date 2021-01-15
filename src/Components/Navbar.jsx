@@ -4,7 +4,7 @@ import logo from "../peckish_logo.svg";
 
 const Navbar = () => {
   return (
-    <>
+    <nav>
       <div className="logo">
         <Link to="/">
           <img src={logo} alt="logo" />
@@ -15,7 +15,7 @@ const Navbar = () => {
         <Link to="/search"> Search </Link>
         <Link to="/contact"> Contact </Link>
       </div>
-    </>
+    </nav>
   );
 };
 

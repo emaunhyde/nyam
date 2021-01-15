@@ -1,16 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import SearchContext from "./SearchContext";
 
-const Gallery = ({ searchResults }) => {
+const Gallery = () => {
+  const { searchResults } = useContext(SearchContext);
   const [restaurants, setRestaurants] = useState([]);
 
-  useEffect(() => {
-    setRestaurants(searchResults.restaurants);
-    console.log(restaurants[0].restaurant.name);
-  }, [searchResults]);
+  //   useEffect(() => {
+
+  //   setRestaurants(searchResults);
+  //   console.log(restaurants);
+  //   }, [searchResults]);
 
   return (
     <div>
-      <h3></h3>
+      <h3>
+        {/* {restaurants.restaurants.map((e) => {
+          return <p>{e.restaurant.name}</p>;
+        })} */}
+      </h3>
     </div>
   );
 };

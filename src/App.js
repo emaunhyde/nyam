@@ -6,17 +6,21 @@ import React, { useEffect, useState } from "react";
 import { Route } from "react-router-dom";
 
 // component imports
+import SearchContext from "./Components/SearchContext";
 import Header from "./Components/Header";
 import Navbar from "./Components/Navbar";
 import Search from "./Components/Search";
 import Gallery from "./Components/Gallery";
 import Footer from "./Components/Footer";
 
+//
+//
+//
+//
+
 function App() {
-  const initialState = {};
   const [searchComplete, setSearchComplete] = useState(false);
   const [searchResults, setSearchResults] = useState("");
-
   const [longitude, setLongitude] = useState(0);
   const [latitude, setLatitude] = useState(0);
 
@@ -27,46 +31,43 @@ function App() {
     setLongitude(crds.longitude);
     setLatitude(crds.latitude);
     console.log(latitude, longitude);
+    console.log(searchComplete);
   }
+
   function Error(err) {
     console.log(`Error${err.code}: ${err.message}`);
   }
 
-  //geolocation side effect
+  //geolocation side effect on home page render
 
   useEffect(() => {
-    const location = navigator.geolocation.getCurrentPosition(Coords, Error);
-  }, []);
+    navigator.geolocation.getCurrentPosition(Coords, Error);
+  });
+
+  //
+  //
+  //
+  //
 
   return (
     <>
-      <nav>
+      <SearchContext.Provider
+        value={{
+          searchResults,
+          setSearchResults,
+          longitude,
+          latitude,
+          searchComplete,
+          setSearchComplete,
+        }}
+      >
         <Navbar />
-      </nav>
+        <Header />
+        <Route exact path="/search" render={() => <Search />} />
+        <Gallery />
+      </SearchContext.Provider>
 
-      <Header />
-
-      <Route
-        exact
-        path="/search"
-        render={() => (
-          <Search
-            latitude={latitude}
-            longitude={longitude}
-            setSearchComplete={setSearchComplete}
-            setSearchResults={setSearchResults}
-            searchResults={searchResults}
-          />
-        )}
-      />
-      <Gallery searchResults={searchResults} />
-
-      <footer>
-        <Footer />
-      </footer>
-      <>
-        <main></main>
-      </>
+      <Footer />
     </>
   );
 }
