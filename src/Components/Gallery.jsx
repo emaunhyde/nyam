@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import SearchContext from "./SearchContext";
+import RestaurantList from "./RestaurantList";
 
 const Gallery = () => {
   const { searchResults, searchComplete, setSearchComplete } = useContext(
@@ -11,19 +12,12 @@ const Gallery = () => {
     if (searchComplete === true) {
       setRestaurants(searchResults);
       setSearchComplete(false);
-      console.log(restaurants);
-      console.log(searchComplete);
     }
-  }, [searchResults]);
+  }, [searchResults, restaurants, searchComplete, setSearchComplete]);
 
   return (
     <div>
-      <h3>
-        {/* {searchComplete
-          ? restaurants.restaurants.map((e) => {
-              return <li key={e.restaurant.R.res_id}>{e.restaurant.name}</li>; */}
-        {/* }) : ""} */}
-      </h3>
+      <RestaurantList restaurants={restaurants} />
     </div>
   );
 };

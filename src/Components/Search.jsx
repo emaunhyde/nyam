@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import SearchContext from "./SearchContext";
 
 const Search = () => {
@@ -6,21 +6,19 @@ const Search = () => {
   const {
     longitude,
     latitude,
-    searchResults,
     setSearchResults,
     setSearchComplete,
-    searchComplete,
   } = useContext(SearchContext);
 
-  // search states
-
+  // search info -  user input
   const [searchString, setSearchString] = useState("");
 
   // api search function occuring on form submit
 
-  function searchAPI(searchString) {
+  async function searchAPI(searchString) {
     const key = process.env.REACT_APP_ZOMATO_KEY;
-    const url = `https://developers.zomato.com/api/v2.1/search?lat=${latitude}&lon=${longitude}&sort=real_distance&query=${searchString}&radius=500&count=20`;
+    const url = `https://developers.zomato.com/api/v2.1/search?q=${searchString}&lat=${latitude}
+    &lon=${longitude}&radius=500&sort=real_distance&order=asc&start=0&count=20`;
 
     var myHeaders = new Headers({
       "user-key": `${key}`,
@@ -31,29 +29,28 @@ const Search = () => {
       headers: myHeaders,
       redirect: "follow",
     };
-    fetch(url, requestOptions)
-      .then((response) => response.json())
-      .then((result) => {
-        setSearchResults(result);
-        setSearchComplete(true);
-        console.log(searchResults);
-        console.log(searchComplete);
-      })
-      .catch((error) => console.log("error", error));
+
+    const response = await fetch(url, requestOptions);
+    const result = await response.json();
+
+    return result;
   }
 
   // submit function calling the apisearcher function
 
   function handleSubmit(event) {
     event.preventDefault();
-    searchAPI(searchString);
+    searchAPI(searchString).then((result) => {
+      setSearchResults(result);
+      setSearchComplete(true);
+      setSearchString("");
+    });
   }
 
   // setting search string as user types
 
   function handleChange(event) {
     setSearchString(event.target.value);
-    console.log(event.target.value);
   }
 
   return (

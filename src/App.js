@@ -1,5 +1,6 @@
-// style sheet
+// styling sheet
 import "./App.css";
+import Bootstrap from "bootstrap/dist/css/bootstrap.css";
 
 // library functionality
 import React, { useEffect, useState } from "react";
@@ -20,7 +21,7 @@ import Footer from "./Components/Footer";
 
 function App() {
   const [searchComplete, setSearchComplete] = useState(false);
-  const [searchResults, setSearchResults] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
   const [longitude, setLongitude] = useState(0);
   const [latitude, setLatitude] = useState(0);
 
@@ -49,6 +50,7 @@ function App() {
 
   return (
     <>
+      <Navbar />
       <SearchContext.Provider
         value={{
           searchResults,
@@ -59,10 +61,13 @@ function App() {
           setSearchComplete,
         }}
       >
-        <Navbar />
-        <Header />
-        <Route exact path="/search" render={() => <Search />} />
-        <Gallery />
+        <Route exact path="/">
+          <Header />
+        </Route>
+        <Route path="/search">
+          <Search />
+          <Gallery />
+        </Route>
       </SearchContext.Provider>
 
       <Footer />
