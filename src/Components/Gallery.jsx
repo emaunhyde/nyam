@@ -15,18 +15,14 @@ const Gallery = () => {
     }
   }, [searchResults, restaurants, searchComplete, setSearchComplete]);
 
-  if (restaurants.length < 1) {
+  if (restaurants.length > 1) {
     return (
-      <>
-        <p>Loading ... </p>
-      </>
+      <div>
+        <RestaurantList restaurants={restaurants} />
+      </div>
     );
   }
-  return (
-    <div>
-      <RestaurantList restaurants={restaurants} />
-    </div>
-  );
+  return <div></div>;
 };
 
 export default Gallery;

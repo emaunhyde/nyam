@@ -12,6 +12,7 @@ import Header from "./Components/Header";
 import Navbar from "./Components/Navbar";
 import Search from "./Components/Search";
 import Gallery from "./Components/Gallery";
+import Listing from "./Components/Listing";
 import Footer from "./Components/Footer";
 
 //
@@ -68,6 +69,7 @@ function App() {
           <Search />
           <Gallery />
         </Route>
+        <Route path="/search:id" component={Listing} />
       </SearchContext.Provider>
 
       <Footer />
