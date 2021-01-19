@@ -6,6 +6,8 @@ const Header = () => {
   const key = process.env.REACT_APP_PEXELS_KEY;
   const url = `https://api.pexels.com/v1/search?query=meal&per_page=3`;
 
+  // fetching images for home page carousel
+
   async function searchPhotos() {
     const response = await fetch(url, {
       headers: {
