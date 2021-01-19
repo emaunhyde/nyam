@@ -16,9 +16,10 @@ const Search = () => {
   // api search function occuring on form submit
 
   async function searchAPI(searchString) {
+    console.log(latitude, longitude);
     const key = process.env.REACT_APP_ZOMATO_KEY;
-    const url = `https://developers.zomato.com/api/v2.1/search?q=${searchString}&lat=${latitude}
-    &lon=${longitude}&radius=500&sort=real_distance&order=asc&start=0&count=20`;
+    const url = `https://developers.zomato.com/api/v2.1/search?q=${searchString}
+    &count=20&lat=${latitude}&lon=${longitude}&radius=5000&sort=rating&order=asc`;
 
     const myHeaders = new Headers({
       "user-key": `${key}`,

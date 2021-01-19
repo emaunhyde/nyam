@@ -65,11 +65,11 @@ function App() {
         <Route exact path="/">
           <Header />
         </Route>
-        <Route path="/search">
+        <Route exact path="/search">
           <Search />
           <Gallery />
         </Route>
-        <Route path="/search:id" component={Listing} />
+        <Route exact path="/search/:id" component={Listing} />
       </SearchContext.Provider>
 
       <Footer />
