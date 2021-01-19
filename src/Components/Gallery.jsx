@@ -15,6 +15,13 @@ const Gallery = () => {
     }
   }, [searchResults, restaurants, searchComplete, setSearchComplete]);
 
+  if (restaurants.length < 1) {
+    return (
+      <>
+        <p>Loading ... </p>
+      </>
+    );
+  }
   return (
     <div>
       <RestaurantList restaurants={restaurants} />

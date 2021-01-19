@@ -20,11 +20,11 @@ const Search = () => {
     const url = `https://developers.zomato.com/api/v2.1/search?q=${searchString}&lat=${latitude}
     &lon=${longitude}&radius=500&sort=real_distance&order=asc&start=0&count=20`;
 
-    var myHeaders = new Headers({
+    const myHeaders = new Headers({
       "user-key": `${key}`,
     });
 
-    var requestOptions = {
+    const requestOptions = {
       method: "GET",
       headers: myHeaders,
       redirect: "follow",
@@ -41,7 +41,8 @@ const Search = () => {
   function handleSubmit(event) {
     event.preventDefault();
     searchAPI(searchString).then((result) => {
-      setSearchResults(result);
+      const restaurant = result.restaurants;
+      setSearchResults(restaurant);
       setSearchComplete(true);
       setSearchString("");
     });
