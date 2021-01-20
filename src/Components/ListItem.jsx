@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "react-bootstrap/Image";
+import Map from "./Map";
 
 const ListItem = (listing) => {
   const restaurant = listing.listing;
@@ -37,6 +38,9 @@ const ListItem = (listing) => {
       <h5>{restaurant.highlights}</h5>
       <h5>{restaurant.location.address}</h5>
       <h6>{restaurant.timings}</h6>
+      {/* <div>
+        <Map />
+      </div> */}
     </div>
   );
 };

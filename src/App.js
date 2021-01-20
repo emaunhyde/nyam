@@ -50,7 +50,7 @@ function App() {
   //
 
   return (
-    <>
+    <main>
       <Navbar />
       <SearchContext.Provider
         value={{
@@ -73,7 +73,7 @@ function App() {
       </SearchContext.Provider>
 
       <Footer />
-    </>
+    </main>
   );
 }
 

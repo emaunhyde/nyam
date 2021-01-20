@@ -4,7 +4,7 @@ import Carousel from "react-bootstrap/Carousel";
 const Header = () => {
   const [photos, setPhotos] = useState([]);
   const key = process.env.REACT_APP_PEXELS_KEY;
-  const url = `https://api.pexels.com/v1/search?query=meal&per_page=3`;
+  const url = `https://api.pexels.com/v1/search?query=food%20photography&per_page=30`;
 
   // fetching images for home page carousel
 
@@ -38,7 +38,7 @@ const Header = () => {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src={photos.photos[0].src.landscape}
+              src={photos.photos[9].src.landscape}
               alt="First slide"
             />
             <Carousel.Caption></Carousel.Caption>
@@ -46,7 +46,7 @@ const Header = () => {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src={photos.photos[1].src.landscape}
+              src={photos.photos[29].src.landscape}
               alt="Third slide"
             />
 
@@ -55,7 +55,7 @@ const Header = () => {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src={photos.photos[2].src.landscape}
+              src={photos.photos[16].src.landscape}
               alt="Third slide"
             />
 
