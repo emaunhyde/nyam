@@ -1,6 +1,6 @@
 // styling sheet
+import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
-import Bootstrap from "bootstrap/dist/css/bootstrap.css";
 
 // library functionality
 import React, { useEffect, useState } from "react";
