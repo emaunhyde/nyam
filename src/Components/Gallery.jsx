@@ -17,7 +17,7 @@ const Gallery = () => {
 
   if (restaurants.length > 1) {
     return (
-      <div>
+      <div className="gallery">
         <RestaurantList restaurants={restaurants} />
       </div>
     );

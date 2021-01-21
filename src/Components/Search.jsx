@@ -55,18 +55,20 @@ const Search = () => {
   }
 
   return (
-    <div>
+    <div className="form">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           id="input"
-          placeholder=" stop frowning and tell us what you're looking for"
+          placeholder="dumplings? pasta? burger? all of them?"
           name="searchTerms"
           onChange={handleChange}
           required
         />
 
-        <button type="submit">go</button>
+        <button type="submit" className="inputbtn">
+          search
+        </button>
       </form>
     </div>
   );

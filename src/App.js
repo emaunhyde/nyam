@@ -13,7 +13,6 @@ import Navbar from "./Components/Navbar";
 import Search from "./Components/Search";
 import Gallery from "./Components/Gallery";
 import Listing from "./Components/Listing";
-import Footer from "./Components/Footer";
 
 //
 //
@@ -50,30 +49,30 @@ function App() {
   //
 
   return (
-    <main>
+    <>
       <Navbar />
-      <SearchContext.Provider
-        value={{
-          searchResults,
-          setSearchResults,
-          longitude,
-          latitude,
-          searchComplete,
-          setSearchComplete,
-        }}
-      >
-        <Route exact path="/">
-          <Header />
-        </Route>
-        <Route exact path="/search">
-          <Search />
-          <Gallery />
-        </Route>
-        <Route exact path="/search/:id" component={Listing} />
-      </SearchContext.Provider>
-
-      <Footer />
-    </main>
+      <main>
+        <SearchContext.Provider
+          value={{
+            searchResults,
+            setSearchResults,
+            longitude,
+            latitude,
+            searchComplete,
+            setSearchComplete,
+          }}
+        >
+          <Route exact path="/">
+            <Header />
+          </Route>
+          <Route exact path="/search">
+            <Search />
+            <Gallery />
+          </Route>
+          <Route exact path="/search/:id" component={Listing} />
+        </SearchContext.Provider>
+      </main>
+    </>
   );
 }
 

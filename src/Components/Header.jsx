@@ -46,7 +46,7 @@ const Header = () => {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src={photos.photos[29].src.landscape}
+              src={photos.photos[12].src.landscape}
               alt="Third slide"
             />
 
@@ -55,7 +55,7 @@ const Header = () => {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src={photos.photos[16].src.landscape}
+              src={photos.photos[27].src.landscape}
               alt="Third slide"
             />
 
