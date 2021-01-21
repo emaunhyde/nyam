@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Peckish 
+## Description 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A single page React-based application - peckish - pulls information from Zomato (a restaurant listing API database) and displays results based on users' search input. The goal was to create an easy-to-use platform that renders all the information you need to find a restaurant, choose a meal off their menu, and place your order.
 
-## Available Scripts
+## Deploy  :key:
 
-In the project directory, you can run:
+[Peckish](https://peckish-v1.herokuapp.com/)
 
-### `yarn start`
+## Technologies Used :bulb:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[x] HTML/CSS
+[x] Javascript 
+[x] React.js
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Building :package:
+* [wireframes](src/Images/peckish_wireframe-01.jpg)
+* [component hierarchy](src/Images/peckish_components-01.jpg)
+* [screenshots](src/Images/peckish_screenshots-01.jpg)
 
-### `yarn test`
+## User Stories
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* as someone feeling peckish I want to be able to quickly find restaurant options near me
+* as someone feeling hangry I want a no-nonsense search format that makes it easy to find what I'm looking for and gives me only the information I need so that I can get my order in asap
+* as someone about to order food I want to know what my menu options are so that I don't have to navigate anywhere separately to find that information
 
-### `yarn build`
+## MVP Goals
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* have functioning components that update based on user search input to display matching results from API data
+* utilize router/links to have navigation displayed on each page so user can easily navigate the site
+* display a gallery of results based on the user's search input linking to a component providing additional information
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Stretch Goals
+* be able to display the menu within the result component (displaying the menu requires a separate API fetch)
+* be able to have different search parameters to offer users a refined search option
+* have users select how many results they want displaying (some users like searching page after page, some like limiting their choices)
+* a way to adjust search parameters on the gallery page so that a new search does not have to be created
+* have the site be responsive on mobile and desktop devices
+* zomato's API does not provide any images so one stretch goal is to incorporate a secondary image database API (Pexels) to render restaurant imagery that will be used throughout the site
+  
+## Installation Instructions 
+* first, fork and clone the repo 
+* next, npm i to install required packages
+* finally, open up the files in your code editor and get to work
 
-### `yarn eject`
+```
+git clone your-link-or-ssh
+cd peckish
+npm i
+code .
+npm start
+```
+## Contribution Guidelines
+Feel free to submit pull requests to this repo providing clear log messages for commits. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
