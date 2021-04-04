@@ -1,11 +1,11 @@
-# Peckish 
+# Nyam
 ## Description 
 
-A single page React-based application - peckish - pulls information from Zomato (a restaurant listing API database) and displays results based on users' search input. The goal was to create an easy-to-use platform that renders all the information you need to find a restaurant, choose a meal off their menu, and place your order.
+A single page React-based application - nyam - pulls information from Zomato (a restaurant listing API database) and displays results based on users' search input. The goal was to create an easy-to-use platform that renders all the information you need to find a restaurant, choose a meal off their menu, and place your order.
 
 ## Deploy  :key:
 
-[Peckish](https://peckish-v1.herokuapp.com/)
+[Nyam](https://peckish-v1.herokuapp.com/)
 
 ## Technologies Used :bulb:
 
@@ -46,7 +46,7 @@ A single page React-based application - peckish - pulls information from Zomato 
 
 ```
 git clone your-link-or-ssh
-cd peckish
+cd nyam
 npm i
 code .
 npm start
